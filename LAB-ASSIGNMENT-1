@@ -1,0 +1,280 @@
+ (1) 
+
+test> show dbs;
+admin    40.00 KiB
+config  108.00 KiB
+local    80.00 KiB
+test> use gamesystem
+switched to db gamesystem
+
+gamesystem> db.gamesystem.insertMany([{name:"battleground-mobile-india",publisher:"krafton-games",releaseYear:2023,genre:"battle-royale",rating:95,playerScores:[{game:1,playername:"xyz",score:1},{game:2,pplayername:"abc",score:2},{game:3,playername:"def",score:1}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6b956928266c2be0b060e") }
+}
+
+gamesystem> db.gamesystem.insertMany([{name:"clash-of-clanes",publisher:"supercell",releaseYear:2013,genre:"battle",rating:89,playerScores:[{game:1,playername:"xyz",score:1},{game:2,playername:"abc",score:2},{game:3,playername:"def",score:0}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6bb49170af44f1ee97ca3") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"candy-crush-soda-saga",publisher:"king",releaseYear:2015,genre:"casual-game",rating:94,playerScores:[{game:1,playername:"xyz",score:1},{game:2,playername:"abc",score:2},{game:3,playername:"def",score:0}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6bbd3170af44f1ee97ca4") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"subway surfers",publisher:"kiloo,sybo-games",releaseYear:2012,genre:"endless-running",rating:91,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6bc5a170af44f1ee97ca5") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"ludo-king",publisher:"gametion-technologies",releaseYear:2015,genre:"casual-gaming",rating:90,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6bceb170af44f1ee97ca6") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"need-for-speed-most-wanted",publisher:"electronic-arts",releaseYear:2005,genre:"racing",rating:96,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6bdad170af44f1ee97ca7") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"world-cricket-championship",publisher:"nextwave-technologies",releaseYear:2011,genre:"cricket",rating:92,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6be0c170af44f1ee97ca8") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"pubg",publisher:"krafton-game",releaseYear:2018,genre:"battlewar-game",rating:98,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6be54170af44f1ee97ca9") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"gta",publisher:"rockstar-games",releaseYear:1997,genre:"action-adventure",rating:98,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6beaf170af44f1ee97caa") }
+}
+gamesystem> db.gamesystem.insertMany([{name:"asphalt-nitro-racing",publisher:"gameloft",releaseYear:2015,genre:"action-car-racing",rating:95,playerScores:[{game:1,playername:"xyz",score:120},{game:2,playername:"abc",score:250},{game:3,playername:"def",score:550}]}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("64f6beff170af44f1ee97cab") }
+}
+
+
+
+
+
+ (2)
+  gamesystem> db.gamesystem.find({}, { _id: 0, name: 1 })
+[
+  { name: 'battleground-mobile-india' },
+  { name: 'clash-of-clanes' },
+  { name: 'candy-crush-soda-saga' },
+  { name: 'subway surfers' },
+  { name: 'ludo-king' },
+  { name: 'need-for-speed-most-wanted' },
+  { name: 'world-cricket-championship' },
+  { name: 'pubg' },
+  { name: 'gta' },
+  { name: 'asphalt-nitro-racing' }
+]
+
+
+
+ (3)
+ gamesystem> db.gamesystem.find({name:"pubg"})
+[
+  {
+    _id: ObjectId("64f6be54170af44f1ee97ca9"),
+    name: 'pubg',
+    publisher: 'krafton-game',
+    releaseYear: 2018,
+    genre: 'battlewar-game',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  }
+]
+
+
+
+gamesystem> db.gamesystem.find({name:"ludo-king"})
+[
+  {
+    _id: ObjectId("64f6bceb170af44f1ee97ca6"),
+    name: 'ludo-king',
+    publisher: 'gametion-technologies',
+    releaseYear: 2015,
+    genre: 'casual-gaming',
+    rating: 90,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  }
+]
+
+
+
+gamesystem> db.gamesystem.find({name:"subway surfers"})
+[
+  {
+    _id: ObjectId("64f6bc5a170af44f1ee97ca5"),
+    name: 'subway surfers',
+    publisher: 'kiloo,sybo-games',
+    releaseYear: 2012,
+    genre: 'endless-running',
+    rating: 91,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  }
+]
+
+
+ (4)
+ gamesystem> db.gamesystem.find().sort({rating:-1}).limit(3)
+[
+  {
+    _id: ObjectId("64f6beaf170af44f1ee97caa"),
+    name: 'gta',
+    publisher: 'rockstar-games',
+    releaseYear: 1997,
+    genre: 'action-adventure',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  },
+  {
+    _id: ObjectId("64f6be54170af44f1ee97ca9"),
+    name: 'pubg',
+    publisher: 'krafton-game',
+    releaseYear: 2018,
+    genre: 'battlewar-game',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  },
+  {
+    _id: ObjectId("64f6bdad170af44f1ee97ca7"),
+    name: 'need-for-speed-most-wanted',
+    publisher: 'electronic-arts',
+    releaseYear: 2005,
+    genre: 'racing',
+    rating: 96,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ]
+  }
+]
+
+
+
+ (5)
+ db.gamesystem.find({ releaseYear: 2020 }).sort({ rating: -1 }).limit(3)
+
+
+ (6)
+ gamesystem> db.gamesystem.update({name:"pubg"},{$set:{achievements:{'Game Master':true,'Speed Demon':true}}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+gamesystem> db.gamesystem.update({name:"gta"},{$set:{achievements:{'Game Master':true,'Speed Demon':true}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+
+(7) 
+gamesystem> db.gamesystem.find({ achievements: { 'Game Master': true, 'Speed Demon': true } })
+[
+  {
+    _id: ObjectId("64f6be54170af44f1ee97ca9"),
+    name: 'pubg',
+    publisher: 'krafton-game',
+    releaseYear: 2018,
+    genre: 'battlewar-game',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ],
+    achievements: { 'Game Master': true, 'Speed Demon': true }
+  },
+  {
+    _id: ObjectId("64f6beaf170af44f1ee97caa"),
+    name: 'gta',
+    publisher: 'rockstar-games',
+    releaseYear: 1997,
+    genre: 'action-adventure',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ],
+    achievements: { 'Game Master': true, 'Speed Demon': true }
+  }
+]
+
+
+
+ (8)
+ gamesystem> db.gamesystem.find({ achievements: { $exists: true } })
+[
+  {
+    _id: ObjectId("64f6be54170af44f1ee97ca9"),
+    name: 'pubg',
+    publisher: 'krafton-game',
+    releaseYear: 2018,
+    genre: 'battlewar-game',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ],
+    achievements: { 'Game Master': true, 'Speed Demon': true }
+  },
+  {
+    _id: ObjectId("64f6beaf170af44f1ee97caa"),
+    name: 'gta',
+    publisher: 'rockstar-games',
+    releaseYear: 1997,
+    genre: 'action-adventure',
+    rating: 98,
+    playerScores: [
+      { game: 1, playername: 'xyz', score: 120 },
+      { game: 2, playername: 'abc', score: 250 },
+      { game: 3, playername: 'def', score: 550 }
+    ],
+    achievements: { 'Game Master': true, 'Speed Demon': true }
+  }
+]
+
+
+
